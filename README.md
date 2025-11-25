@@ -1,5 +1,5 @@
 
-```markdown
+
 # 📚 BookWorm Backend  
 A clean FastAPI service for managing books — built for learning modern backend development, following the same architecture used in the FastAPI Movie Service exercise (Session 03).
 
@@ -32,7 +32,7 @@ This project includes:
 
 ## 📁 Project Structure
 
-```
+
 
 BookWorm/
 ├── backend/
@@ -214,5 +214,6 @@ The “BookWorm” theme replaces movies with books, but follows all the same ar
 ## 📝 License
 
 Free for educational and personal use.
+
 
 ```
