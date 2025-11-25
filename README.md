@@ -37,21 +37,15 @@ This project includes:
 BookWorm/
 ├── backend/
 │   ├── app/
-│   │   ├── main.py
-│   │   ├── models.py
-│   │   ├── config.py
-│   │   ├── dependencies.py
-│   │   └── repository.py
-│   └── scripts/
-│       ├── seed_books.py
-│       └── export_openapi.py
-│
+│     ├── main.py
+│     ├── models.py
+│     ├── config.py
+│     ├── dependencies.py
+│     └── repository.py
 ├── backend.Dockerfile
 ├── tests/
 │   ├── conftest.py
 │   └── test_books.py
-├── data/
-│   └── books_seed.json
 ├── pyproject.toml
 ├── uv.lock
 └── README.md
@@ -214,6 +208,7 @@ The “BookWorm” theme replaces movies with books, but follows all the same ar
 ## 📝 License
 
 Free for educational and personal use.
+
 
 
 
