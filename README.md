@@ -33,7 +33,7 @@ This project includes:
 ## 📁 Project Structure
 
 
-
+```bash
 BookWorm/
 ├── backend/
 │   ├── app/
@@ -55,8 +55,8 @@ BookWorm/
 ├── pyproject.toml
 ├── uv.lock
 └── README.md
+```
 
-````
 
 ---
 
@@ -217,3 +217,4 @@ Free for educational and personal use.
 
 
 ```
+
