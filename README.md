@@ -126,61 +126,6 @@ uv run python -m backend.scripts.export_openapi
 
 ---
 
-## 🌱 Seeding Data (Optional)
-
-This project includes an optional seed script that loads a JSON list of books.
-
-Example usage:
-
-```bash
-uv run python -m backend.scripts.seed_books data/books_seed.json --clear
-```
-
-This is **not required** for the assignment — just a convenient development tool.
-
----
-
-## 📘 Example Book Payload
-
-```json
-{
-  "title": "Dune",
-  "author": "Frank Herbert",
-  "year": 1965,
-  "genre": "Sci-Fi",
-  "pages": 412
-}
-```
-
----
-
-## 📚 Bulk Insert Example
-
-Send an array of books to:
-
-`POST /books/bulk`
-
-```json
-[
-  {
-    "title": "Dune",
-    "author": "Frank Herbert",
-    "year": 1965,
-    "genre": "Sci-Fi",
-    "pages": 412
-  },
-  {
-    "title": "The Hobbit",
-    "author": "J.R.R. Tolkien",
-    "year": 1937,
-    "genre": "Fantasy",
-    "pages": 310
-  }
-]
-```
-
----
-
 ## 🧩 Technologies
 
 * Python 3.12
@@ -208,6 +153,7 @@ The “BookWorm” theme replaces movies with books, but follows all the same ar
 ## 📝 License
 
 Free for educational and personal use.
+
 
 
 
