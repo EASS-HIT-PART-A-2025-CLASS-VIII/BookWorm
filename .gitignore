@@ -6,6 +6,15 @@ __pycache__/
 
 # Virtual environments
 .venv/
+venv/
+ENV/
+
+# Backup files
+*.bak
+pyproject.toml.bak
+
+# Logs
+*.log
 
 # Env files (secrets)
 .env
