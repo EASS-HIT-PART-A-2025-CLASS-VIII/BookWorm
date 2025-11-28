@@ -1,7 +1,7 @@
 # filepath: backend/app/main.py
-from .db import init_db
-
 from __future__ import annotations
+
+from .db import init_db
 
 import logging
 
