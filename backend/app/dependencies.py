@@ -4,23 +4,20 @@ from typing import Annotated
 from fastapi import Depends
 
 from .config import Settings
-from .repository import BookRepository
+from .repository import DbBookRepository
 
-# Single instances shared across requests
+
 _settings = Settings()
-_repository = BookRepository()
+_repository = DbBookRepository()
 
 
 def get_settings() -> Settings:
-    """Provide Settings to endpoints."""
     return _settings
 
 
-def get_repository() -> BookRepository:
-    """Provide BookRepository to endpoints."""
+def get_repository() -> DbBookRepository:
     return _repository
 
 
-# Type aliases for cleaner endpoint signatures
 SettingsDep = Annotated[Settings, Depends(get_settings)]
-RepositoryDep = Annotated[BookRepository, Depends(get_repository)]
+RepositoryDep = Annotated[DbBookRepository, Depends(get_repository)]

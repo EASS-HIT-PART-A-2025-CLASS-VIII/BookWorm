@@ -1,4 +1,6 @@
 # filepath: backend/app/main.py
+from .db import init_db
+
 from __future__ import annotations
 
 import logging
@@ -11,7 +13,13 @@ from .models import Book, BookCreate
 logger = logging.getLogger("backend")
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-app = FastAPI(title="BookWorm API", version="0.2.0")
+app = FastAPI(title="BookWorm API", version="0.3.0")
+
+
+@app.on_event("startup")
+def on_startup() -> None:
+    init_db()
+
 
 
 @app.get("/health")
