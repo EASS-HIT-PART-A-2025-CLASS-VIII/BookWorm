@@ -1,6 +1,7 @@
 # filepath: backend/app/main.py
 from __future__ import annotations
 
+from contextlib import asynccontextmanager
 from .db import init_db
 
 import logging
@@ -13,12 +14,14 @@ from .models import Book, BookCreate
 logger = logging.getLogger("backend")
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-app = FastAPI(title="BookWorm API", version="0.3.0")
-
-
-@app.on_event("startup")
-def on_startup() -> None:
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Initialize database tables on startup
     init_db()
+    yield
+
+
+app = FastAPI(title="BookWorm API", version="0.3.0", lifespan=lifespan)
 
 
 

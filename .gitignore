@@ -26,3 +26,8 @@ pyproject.toml.bak
 # OS files
 .DS_Store
 Thumbs.db
+
+# Local DB files
+*.db
+*.sqlite
+bookworm.db
