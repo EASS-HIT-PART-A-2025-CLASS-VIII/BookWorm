@@ -1,9 +1,9 @@
 # BookWorm Backend
-A clean FastAPI service for managing books, following the architecture from the FastAPI Movie Service exercise (Session 03). Deployed on Render with a PostgreSQL database.
+FastAPI service for managing books, deployed on Render with PostgreSQL.
 
 ---
 
-## Live API
+## :globe_with_meridians: Live API
 - Base URL: https://bookworm-api-ad8e.onrender.com
 - Health: `GET /health`
 - Docs: `https://bookworm-api-ad8e.onrender.com/docs`
@@ -11,7 +11,7 @@ A clean FastAPI service for managing books, following the architecture from the 
 
 ---
 
-## Features
+## :sparkles: Features
 - `GET /health` health check
 - `GET /books` list all books
 - `POST /books` create a new book
@@ -22,27 +22,28 @@ A clean FastAPI service for managing books, following the architecture from the 
 
 ---
 
-## Project Structure
+## :card_file_box: Project Structure
 ```bash
 BookWorm/
-├── backend/
-│   ├── app/
-│   │   ├── main.py
-│   │   ├── models.py
-│   │   ├── config.py
-│   │   ├── dependencies.py
-│   │   └── repository.py
-│   ├── backend.Dockerfile
-│   └── tests/
-├── pyproject.toml
-├── uv.lock
-└── README.md
+|-- backend/
+|   |-- app/
+|   |   |-- main.py
+|   |   |-- models.py
+|   |   |-- config.py
+|   |   |-- dependencies.py
+|   |   `-- repository.py
+|   |-- backend.Dockerfile
+|   `-- tests/
+|-- pyproject.toml
+|-- uv.lock
+`-- README.md
 ```
 
 ---
 
-## Local Development
-By default, the app uses SQLite at `bookworm.db`. To use Postgres locally, set `DATABASE_URL=postgresql://user:pass@host:5432/dbname`.
+## :hammer_and_wrench: Local Development
+- Default DB: SQLite at `bookworm.db`.
+- To use Postgres locally: set `DATABASE_URL=postgresql://user:pass@host:5432/dbname` (replace `host` with a reachable host like `localhost`).
 
 1) Install dependencies (uv)
 ```bash
@@ -59,29 +60,29 @@ Docs: http://127.0.0.1:8000/docs
 
 ---
 
-## Running Tests
+## :test_tube: Running Tests
 ```bash
 uv run pytest -v
 ```
 
 ---
 
-## Running with Docker
+## :whale: Running with Docker
 1) Build the image
 ```bash
 docker build -t bookworm-backend -f backend.Dockerfile .
 ```
 
-2) Run the container (set `DATABASE_URL` to use Postgres; otherwise SQLite is used inside the container)
+2) Run the container (uses SQLite by default; optionally set `DATABASE_URL` to point at Postgres)
 ```bash
-docker run --rm -p 8000:8000 -e DATABASE_URL=postgresql://user:pass@host:5432/dbname bookworm-backend
+docker run --rm -p 8000:8000 bookworm-backend
 ```
 
 App: http://127.0.0.1:8000/health
 
 ---
 
-## Exporting OpenAPI Schema
+## :bookmark_tabs: Exporting OpenAPI Schema
 Generate `openapi.json` inside `backend/contracts/`:
 ```bash
 uv run python -m backend.scripts.export_openapi
@@ -89,7 +90,7 @@ uv run python -m backend.scripts.export_openapi
 
 ---
 
-## Technologies
+## :toolbox: Technologies
 - Python 3.12
 - FastAPI
 - SQLModel + PostgreSQL
@@ -100,10 +101,10 @@ uv run python -m backend.scripts.export_openapi
 
 ---
 
-## Purpose
+## :dart: Purpose
 Learning exercise from Session 03 (FastAPI Fundamentals). The BookWorm theme replaces movies with books while keeping the same architecture.
 
 ---
 
-## License
+## :scroll: License
 Free for educational and personal use.
