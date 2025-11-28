@@ -11,8 +11,7 @@ This project includes:
 - Repository + Dependency Injection  
 - Pytest test suite  
 - Docker image  
-- OpenAPI export  
-- Optional seed script for large book datasets  
+- OpenAPI export   
 
 ---
 
