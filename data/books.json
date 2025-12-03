@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "year": 1965,
+    "genre": "Sci-Fi",
+    "pages": 412
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "year": 1937,
+    "genre": "Fantasy",
+    "pages": 310
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949,
+    "genre": "Dystopian",
+    "pages": 328
+  },
+  {
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "year": 1953,
+    "genre": "Dystopian",
+    "pages": 194
+  },
+  {
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "year": 2007,
+    "genre": "Fantasy",
+    "pages": 662
+  },
+  {
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "year": 2021,
+    "genre": "Sci-Fi",
+    "pages": 476
+  },
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "year": 2008,
+    "genre": "Programming",
+    "pages": 464
+  },
+  {
+    "title": "The Psychology of Money",
+    "author": "Morgan Housel",
+    "year": 2020,
+    "genre": "Finance",
+    "pages": 242
+  },
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": 2018,
+    "genre": "Self-Help",
+    "pages": 320
+  },
+  {
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "year": 180,
+    "genre": "Philosophy",
+    "pages": 256
+  }
+]
