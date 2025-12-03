@@ -1,15 +1,15 @@
 # filepath: backend/app/main.py
 from __future__ import annotations
 
-from contextlib import asynccontextmanager
-from .db import init_db
-
 import logging
+from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, status
+from fastapi import FastAPI, status, HTTPException
 
+from .db import init_db
 from .dependencies import SettingsDep, ServiceDep
 from .models import Book, BookCreate
+from .types import BookNotFoundError
 
 logger = logging.getLogger("backend")
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -48,11 +48,23 @@ def create_book(payload: BookCreate, service: ServiceDep) -> Book:
 @app.get("/books/{book_id}", response_model=Book)
 def get_book(book_id: int, service: ServiceDep) -> Book:
     """Retrieve a single book by ID."""
-    return service.get_book(book_id)
+    try:
+        return service.get_book(book_id)
+    except BookNotFoundError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Book not found",
+        ) from exc
 
 
 @app.delete("/books/{book_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_book(book_id: int, service: ServiceDep) -> None:
     """Delete a book by ID."""
-    service.delete_book(book_id)
+    try:
+        service.delete_book(book_id)
+    except BookNotFoundError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Book not found",
+        ) from exc
     logger.info("book.deleted id=%s", book_id)

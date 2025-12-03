@@ -1,4 +1,4 @@
-# filepath: backend/tests/test_books.py
+# filepath: tests/test_books.py
 """
 Test suite for BookWorm API.
 """
