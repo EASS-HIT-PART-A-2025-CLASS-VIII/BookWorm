@@ -3,7 +3,7 @@ FastAPI service for managing books, deployed on Render with PostgreSQL.
 
 ---
 
-## :globe_with_meridians: Live API
+## :globe_with_meridians: Live API on Render
 - Base URL: https://bookworm-api-ad8e.onrender.com
 - Health: `GET /health`
 - Docs: `https://bookworm-api-ad8e.onrender.com/docs`
