@@ -4,6 +4,7 @@ from pydantic import BaseModel, Field, model_validator
 
 class BookBase(BaseModel):
     """Shared fields for book creation and reading."""
+
     title: str
     author: str
     year: int = Field(ge=1400, le=2100)
@@ -13,6 +14,7 @@ class BookBase(BaseModel):
 
 class Book(BookBase):
     """A book returned from the API — includes server-generated ID."""
+
     id: int
 
 

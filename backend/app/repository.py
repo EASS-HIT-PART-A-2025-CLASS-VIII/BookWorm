@@ -64,7 +64,7 @@ class DbBookRepository:
             for payload in payloads:
                 db_book = BookTable(**payload.model_dump())
                 session.add(db_book)
-                session.flush()   # get ids without committing each loop
+                session.flush()  # get ids without committing each loop
                 session.refresh(db_book)
                 created.append(self._to_book(db_book))
             session.commit()

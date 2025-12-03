@@ -14,6 +14,7 @@ from .models import Book, BookCreate
 logger = logging.getLogger("backend")
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Initialize database tables on startup
@@ -22,7 +23,6 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="BookWorm API", version="0.3.0", lifespan=lifespan)
-
 
 
 @app.get("/health")
@@ -61,4 +61,3 @@ def delete_book(book_id: int, repo: RepositoryDep) -> None:
         raise HTTPException(status_code=404, detail="Book not found")
     repo.delete(book_id)
     logger.info("book.deleted id=%s", book_id)
-
